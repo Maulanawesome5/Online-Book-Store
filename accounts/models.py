@@ -1,5 +1,7 @@
 from django.contrib.auth.models import AbstractUser
-from django.db import models
+# from django.db import models
+# from phonenumber_field.modelfields import PhoneNumberField
+# from .managers import UserManager
 
 
 # Create your models here.
@@ -17,17 +19,20 @@ class CustomUser(AbstractUser):
         - is_active
         - date_joined
     """
-    pass
 
     def __str__(self) -> str:
         return self.username
 
 
-# class AddressUser(models.Model):
-#     """
-#     Class ini akan menjadi tabel `alamat_rumah` user di database.
-#     Dibuat terpisah karena tabel user bawaan dari Django tidak menyediakan kolom khusus
-#     seperti nomor telpon, alamat rumah, upload foto, dsb.
-#     """
-#     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-#     address = models.CharField(max_length=255, blank=True, null=True)
+# class CustomUser(AbstractUser):
+#     # username = None
+#     email = models.EmailField("Email Address", unique=True)
+#     phone_number = PhoneNumberField(blank=True)
+
+#     # USERNAME_FIELD = "email"
+#     REQUIRE_FIELDS = []
+
+#     objects = UserManager()
+
+#     def __str__(self) -> str:
+#         return self.username

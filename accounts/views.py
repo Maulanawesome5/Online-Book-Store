@@ -31,4 +31,9 @@ class UserProfileView(DetailView):
                 "page_title": CustomUser.objects.get(id=kwargs.get("pk")).username,
             })
 
+            # print(f"Isi data request\n{request.user.__dir__()}\n")
+            # print(f"Isi data kwargs\n{CustomUserCreationForm}\n")
+
+        # print(f"Isi data kwargs\n{kwargs}") # {'username': 'uzumakiaji', 'pk': 1}
+
         return super().get(request, *args, **kwargs)
