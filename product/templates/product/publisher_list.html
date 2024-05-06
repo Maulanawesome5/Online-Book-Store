@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block contents %}
+
+<div class="row row-cols-5">
+    {% for data in object_list %}
+    <div class="col pb-4" style="margin-right: 55px;">
+        <div class="card" style="width: 15rem;">
+            <img src="{% static 'product/publisher' %}/{{data.images}}"
+                class="card-img-top"
+                style="width: 100%; max-height: 250px; object-fit: contain;">
+            <div class="card-body">
+                <h6><a class="text-decoration-none text-black" href="{% url 'publisher-detail' pk=data.id slug=data.slug %}">{{data.name}}</a></h6>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock contents %}

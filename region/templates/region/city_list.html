@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<div class="container">
+    <h1>Halaman region</h1>
+    <table>
+        {% for c in Cities %}
+        <thead class="mb-2 mr-2 text-center" style="width: fit-content;">
+            <td class="bg-dark text-white">{{c.province.province}}</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{c.city}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+{% endblock contents %}

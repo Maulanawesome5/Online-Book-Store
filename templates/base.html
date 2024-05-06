@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Separated CSS file and Bootstrap CSS -->
+    {% include "snippets/styles.html" %}
+
+    <title>
+        {% block title %}{{page_title}} | {{website}}{% endblock title%}
+    </title>
+</head>
+<body>
+    <!-- Navbar Bootstrap -->
+    {% include "snippets/navbar.html" %}
+
+    <main>
+        <div class="container pt-5">
+            {% block contents %}
+            {% endblock contents %}
+        </div>
+    </main>
+
+    <!-- Separated JS file like Bootstrap, Jquery, Popper -->
+    {% include "snippets/scripts.html" %}
+
+</body>
+</html>
